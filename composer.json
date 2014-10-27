@@ -1,0 +1,22 @@
+{
+	"name": "aimeos/ai-zend2-i18n",
+	"description": "Aimeos Zend Framework 2 translation extension",
+	"type": "aimeos-extension",
+	"support": {
+		"source": "https://github.com/aimeos/ai-zend2-i18n",
+		"issues": "https://github.com/aimeos/ai-zend2-i18n/issues"
+	},
+	"require": {
+		"zendframework/zend-i18n": "2.3.*",
+		"php": ">=5.3.2",
+		"ext-intl": "*"
+	},
+	"autoload": {
+		"psr-0": {
+			"MW": "lib/custom/src"
+		},
+		"classmap": [
+			"lib/custom/src"
+		]
+	}
+}
