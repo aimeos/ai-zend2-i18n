@@ -1,10 +1,15 @@
 {
 	"name": "aimeos/ai-zend2-i18n",
 	"description": "Aimeos Zend Framework 2 translation extension",
+	"keywords": ["aimeos", "adapter", "zend", "i18n", "translate"],
+	"homepage": "http://aimeos.org",
 	"type": "aimeos-extension",
+	"license": "LGPL-3.0",
 	"support": {
 		"source": "https://github.com/aimeos/ai-zend2-i18n",
-		"issues": "https://github.com/aimeos/ai-zend2-i18n/issues"
+		"issues": "https://github.com/aimeos/ai-zend2-i18n/issues",
+		"forum": "https://help.aimeos.org",
+		"wiki": "https://docs.aimeos.org"
 	},
 	"require": {
 		"zendframework/zend-i18n": "2.3.*",
