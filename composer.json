@@ -14,8 +14,7 @@
 	"require": {
 		"zendframework/zend-i18n": "2.3.*",
 		"zendframework/zend-servicemanager": "2.3.*",
-		"php": ">=5.3.2",
-		"ext-intl": "*"
+		"php": ">=5.3.2"
 	},
 	"autoload": {
 		"psr-0": {
