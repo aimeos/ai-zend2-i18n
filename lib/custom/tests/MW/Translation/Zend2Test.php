@@ -58,6 +58,12 @@ class MW_Translation_Zend2Test extends MW_Unittest_Testcase
 	}
 
 
+	public function testDtInvalid()
+	{
+		$this->assertEquals( '', $this->_object->dt( 'testDomain', null ) );
+	}
+
+
 	public function testDn()
 	{
 		/*
@@ -76,6 +82,13 @@ class MW_Translation_Zend2Test extends MW_Unittest_Testcase
 		$this->assertEquals( 'singular translation', $this->_object->dn( 'otherTestDomain', 'File', 'Files', 31 ) );
 
 		$this->assertEquals( 'tests', $this->_object->dn( 'invalidTestDomain', 'test', 'tests', 2 ) );
+	}
+
+
+	public function testDnInvalid()
+	{
+		$this->assertEquals( '', $this->_object->dn( 'otherTestDomain', '', null ) );
+		$this->assertEquals( '', $this->_object->dn( 'otherTestDomain', '', '', null ) );
 	}
 
 

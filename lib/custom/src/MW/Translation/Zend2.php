@@ -58,6 +58,8 @@ class MW_Translation_Zend2
 	 */
 	public function dt( $domain, $singular )
 	{
+		$singular = (string) $singular;
+
 		try
 		{
 			$locale = $this->getLocale();
@@ -89,6 +91,10 @@ class MW_Translation_Zend2
 	 */
 	public function dn( $domain, $singular, $plural, $number )
 	{
+		$singular = (string) $singular;
+		$plural = (string) $plural;
+		$number = (int) $number;
+
 		try
 		{
 			$locale = $this->getLocale();
