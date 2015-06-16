@@ -87,7 +87,7 @@ class MW_Translation_Zend2Test extends MW_Unittest_Testcase
 
 	public function testDnInvalid()
 	{
-		$this->assertEquals( '', $this->_object->dn( 'otherTestDomain', '', null ) );
+		$this->assertEquals( '', $this->_object->dn( 'otherTestDomain', '', null, 1 ) );
 		$this->assertEquals( '', $this->_object->dn( 'otherTestDomain', '', '', null ) );
 	}
 
