@@ -1,15 +1,19 @@
+sudo: false
 language: php
+
 php:
   - "hhvm"
   - "5.6"
   - "5.5"
   - "5.4"
   - "5.3"
+
 before_script:
-  - git clone --depth=50 --branch=2015.03 git://github.com/aimeos/arcavias-core.git ../arcavias-core
-  - cd ../arcavias-core
+  - git clone --depth=50 --branch=2015.03 git://github.com/aimeos/aimeos-core.git ../aimeos-core
+  - cd ../aimeos-core
   - mv ../ai-zend2-i18n ext/
   - composer require "zendframework/zend-servicemanager" "2.3.*"
   - composer require "zendframework/zend-i18n" "2.3.*"
   - composer install
-script: "vendor/bin/phing -Ddir=ext/ai-zend2-i18n testext && vendor/bin/phing -Ddir=ext/ai-zend2-i18n checkext"
+
+script: vendor/bin/phing -Ddir=ext/ai-zend2-i18n testext checkext
