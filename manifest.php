@@ -3,7 +3,7 @@
 return array(
 	'name' => 'ai-zend2-i18n',
 	'depends' => array(
-		'arcavias-core',
+		'aimeos-core',
 	),
 	'include' => array(
 		'lib/custom/src',
