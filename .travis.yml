@@ -16,4 +16,7 @@ before_script:
   - composer require "zendframework/zend-i18n" "2.3.*"
   - composer install
 
-script: vendor/bin/phing -Ddir=ext/ai-zend2-i18n testext checkext
+script: vendor/bin/phing -Ddir=ext/ai-zend2-i18n coverageext checkext
+
+after_success:
+  - php vendor/bin/coveralls -c ext/ai-zend2-i18n/.coveralls.yml

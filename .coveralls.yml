@@ -1,0 +1,3 @@
+src_dir: ext/ai-zend2-i18n
+json_path: ext/ai-zend2-i18n/coveralls.json
+coverage_clover: ext/ai-zend2-i18n/lib/custom/tests/coverage.xml
