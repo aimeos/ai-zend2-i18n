@@ -47,7 +47,7 @@ $i18nPaths = $aimeos->getI18nPaths();
 $i18n = new \MW_Translation_Zend2( $i18nPaths, 'gettext', 'en', array( 'disableNotices' => true ) );
 $context->setI18n( array( 'en' => $i18n );
 ```
-The ```$aimeos``` object is an instance of the ```Arcavias``` class from the core. The code above would only set up the translation for English but you can also set up several languages at once and pass them in the array to the ```setI18n()``` method.
+The ```$aimeos``` object is an instance of the ```Aimeos``` class from the core. The code above would only set up the translation for English but you can also set up several languages at once and pass them in the array to the ```setI18n()``` method.
 
 To speed up retrieving translated strings, you can wrap the translation object into the APC decorator before adding it to the context:
 ```
