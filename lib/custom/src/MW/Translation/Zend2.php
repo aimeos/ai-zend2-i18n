@@ -18,10 +18,10 @@ class MW_Translation_Zend2
 	extends MW_Translation_Abstract
 	implements MW_Translation_Interface
 {
-	private $_adapter;
-	private $_options;
-	private $_translationSources;
-	private $_translations = array();
+	private $adapter;
+	private $options;
+	private $translationSources;
+	private $translations = array();
 
 
 	/**
@@ -41,10 +41,10 @@ class MW_Translation_Zend2
 	{
 		parent::__construct( $locale );
 
-		$this->_adapter = $adapter;
-		$this->_options = $options;
-		$this->_options['locale'] = (string) $locale;
-		$this->_translationSources = $translationSources;
+		$this->adapter = $adapter;
+		$this->options = $options;
+		$this->options['locale'] = (string) $locale;
+		$this->translationSources = $translationSources;
 	}
 
 
@@ -64,7 +64,7 @@ class MW_Translation_Zend2
 		{
 			$locale = $this->getLocale();
 
-			foreach( $this->_getTranslations( $domain ) as $object )
+			foreach( $this->getTranslations( $domain ) as $object )
 			{
 				if( ( $string = $object->translate( $singular, $domain, $locale ) ) != $singular ) {
 					return $string;
@@ -99,7 +99,7 @@ class MW_Translation_Zend2
 		{
 			$locale = $this->getLocale();
 
-			foreach( $this->_getTranslations( $domain ) as $object )
+			foreach( $this->getTranslations( $domain ) as $object )
 			{
 				if( ( $string = $object->translatePlural( $singular, $plural, $number, $domain, $locale ) ) != $singular ) {
 					return $string;
@@ -108,7 +108,7 @@ class MW_Translation_Zend2
 		}
 		catch( Exception $e ) { ; } // Discard errors, return original string instead
 
-		if( $this->_getPluralIndex( $number, $this->getLocale() ) > 0 ) {
+		if( $this->getPluralIndex( $number, $this->getLocale() ) > 0 ) {
 			return (string) $plural;
 		}
 
@@ -127,7 +127,7 @@ class MW_Translation_Zend2
 		$messages = array();
 		$locale = $this->getLocale();
 
-		foreach( $this->_getTranslations( $domain ) as $object ) {
+		foreach( $this->getTranslations( $domain ) as $object ) {
 			$messages = $messages + (array) $object->getMessages( $domain, $locale );
 		}
 
@@ -142,11 +142,11 @@ class MW_Translation_Zend2
 	 * @return array List of translation objects implementing Zend_Translate
 	 * @throws MW_Translation_Exception If initialization fails
 	 */
-	protected function _getTranslations( $domain )
+	protected function getTranslations( $domain )
 	{
-		if( !isset( $this->_translations[$domain] ) )
+		if( !isset( $this->translations[$domain] ) )
 		{
-			if ( !isset( $this->_translationSources[$domain] ) )
+			if ( !isset( $this->translationSources[$domain] ) )
 			{
 				$msg = sprintf( 'No translation directory for domain "%1$s" available', $domain );
 				throw new MW_Translation_Exception( $msg );
@@ -154,18 +154,18 @@ class MW_Translation_Zend2
 
 			$locale = $this->getLocale();
 			// Reverse locations so the former gets not overwritten by the later
-			$locations = array_reverse( $this->_getTranslationFileLocations( $this->_translationSources[$domain], $locale ) );
+			$locations = array_reverse( $this->getTranslationFileLocations( $this->translationSources[$domain], $locale ) );
 
 			foreach( $locations as $location )
 			{
-				$translator = \Zend\I18n\Translator\MwTranslator::factory( $this->_options );
-				$translator->addTranslationFile( $this->_adapter, $location, $domain, $locale );
+				$translator = \Zend\I18n\Translator\MwTranslator::factory( $this->options );
+				$translator->addTranslationFile( $this->adapter, $location, $domain, $locale );
 
-				$this->_translations[$domain][$location] = $translator;
+				$this->translations[$domain][$location] = $translator;
 			}
 		}
 
-		return ( isset( $this->_translations[$domain] ) ? $this->_translations[$domain] : array() );
+		return ( isset( $this->translations[$domain] ) ? $this->translations[$domain] : array() );
 	}
 
 }
