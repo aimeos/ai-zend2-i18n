@@ -6,10 +6,13 @@
  */
 
 
+namespace Aimeos\MW\Translation;
+
+
 /**
- * Test class for MW_Translation_Zend2Test.
+ * Test class for \Aimeos\MW\Translation\Zend2Test.
  */
-class MW_Translation_Zend2Test extends PHPUnit_Framework_TestCase
+class Zend2Test extends \PHPUnit_Framework_TestCase
 {
 	private $object;
 
@@ -34,7 +37,7 @@ class MW_Translation_Zend2Test extends PHPUnit_Framework_TestCase
 			'thirdTestDomain' => array( __DIR__ . $ds . 'testfiles' . $ds . 'case3' ),
 		);
 
-		$this->object = new MW_Translation_Zend2( $this->translationSources, 'PhpArray', 'ru_ZD' );
+		$this->object = new \Aimeos\MW\Translation\Zend2( $this->translationSources, 'PhpArray', 'ru_ZD' );
 	}
 
 
@@ -95,7 +98,7 @@ class MW_Translation_Zend2Test extends PHPUnit_Framework_TestCase
 	// test using the testfiles/case1/ka_GE file; lang: german
 	public function testAdapterGettext()
 	{
-		$object = new MW_Translation_Zend2( $this->translationSources, 'gettext', 'ka_GE', array('disableNotices'=>true) );
+		$object = new \Aimeos\MW\Translation\Zend2( $this->translationSources, 'gettext', 'ka_GE', array('disableNotices'=>true) );
 
 		$this->assertEquals( 'Aktualisierung', $object->dt( 'testDomain', 'Update' ) );
 
@@ -115,7 +118,7 @@ class MW_Translation_Zend2Test extends PHPUnit_Framework_TestCase
 			),
 		);
 
-		$object = new MW_Translation_Zend2( $translationSources, 'PhpArray', 'ru_ZD' );
+		$object = new \Aimeos\MW\Translation\Zend2( $translationSources, 'PhpArray', 'ru_ZD' );
 
 		$this->assertEquals( 'plural 11 translation', $object->dn( 'testDomain', 'File', 'Files', 25 ) );
 	}
@@ -132,7 +135,7 @@ class MW_Translation_Zend2Test extends PHPUnit_Framework_TestCase
 			),
 		);
 
-		$object = new MW_Translation_Zend2( $translationSources, 'gettext', 'ka_GE' );
+		$object = new \Aimeos\MW\Translation\Zend2( $translationSources, 'gettext', 'ka_GE' );
 		$this->assertEquals( 'Neue Version', $object->dt( 'testDomain', 'Update' ) );
 	}
 
@@ -148,7 +151,7 @@ class MW_Translation_Zend2Test extends PHPUnit_Framework_TestCase
 			),
 		);
 
-		$object = new MW_Translation_Zend2( $translationSources, 'gettext', 'ka_GE' );
+		$object = new \Aimeos\MW\Translation\Zend2( $translationSources, 'gettext', 'ka_GE' );
 		$this->assertEquals( 'KFZs', $object->dn( 'testDomain', 'Car', 'Cars', 25 ) );
 	}
 
@@ -164,7 +167,7 @@ class MW_Translation_Zend2Test extends PHPUnit_Framework_TestCase
 			),
 		);
 
-		$object = new MW_Translation_Zend2( $translationSources, 'gettext', 'ka_GE' );
+		$object = new \Aimeos\MW\Translation\Zend2( $translationSources, 'gettext', 'ka_GE' );
 		$result = $object->getAll( 'testDomain' );
 
 		$this->assertArrayHasKey( 'Car', $result );

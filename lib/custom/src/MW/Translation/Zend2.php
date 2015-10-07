@@ -8,15 +8,18 @@
  */
 
 
+namespace Aimeos\MW\Translation;
+
+
 /**
  * Translation using Zend\I18n\Translator\Translator
  *
  * @package MW
  * @subpackage Translation
  */
-class MW_Translation_Zend2
-	extends MW_Translation_Abstract
-	implements MW_Translation_Interface
+class Zend2
+	extends \Aimeos\MW\Translation\Base
+	implements \Aimeos\MW\Translation\Iface
 {
 	private $adapter;
 	private $options;
@@ -54,7 +57,7 @@ class MW_Translation_Zend2
 	 * @param string $domain Translation domain
 	 * @param string $singular String to be translated
 	 * @return string The translated string
-	 * @throws MW_Translation_Exception Throws exception on initialization of the translation
+	 * @throws \Aimeos\MW\Translation\Exception Throws exception on initialization of the translation
 	 */
 	public function dt( $domain, $singular )
 	{
@@ -71,7 +74,7 @@ class MW_Translation_Zend2
 				}
 			}
 		}
-		catch( Exception $e ) { ; } // Discard errors, return original string instead
+		catch( \Exception $e ) { ; } // Discard errors, return original string instead
 
 		return (string) $singular;
 	}
@@ -85,7 +88,7 @@ class MW_Translation_Zend2
 	 * @param string $plural String in plural form
 	 * @param integer $number Quantity to choose the correct plural form for languages with plural forms
 	 * @return string Returns the translated singular or plural form of the string depending on the given number
-	 * @throws MW_Translation_Exception Throws exception on initialization of the translation
+	 * @throws \Aimeos\MW\Translation\Exception Throws exception on initialization of the translation
 	 *
 	 * @link http://framework.zend.com/manual/en/zend.translate.plurals.html
 	 */
@@ -106,7 +109,7 @@ class MW_Translation_Zend2
 				}
 			}
 		}
-		catch( Exception $e ) { ; } // Discard errors, return original string instead
+		catch( \Exception $e ) { ; } // Discard errors, return original string instead
 
 		if( $this->getPluralIndex( $number, $this->getLocale() ) > 0 ) {
 			return (string) $plural;
@@ -140,7 +143,7 @@ class MW_Translation_Zend2
 	 *
 	 * @param string $domain Translation domain
 	 * @return array List of translation objects implementing Zend_Translate
-	 * @throws MW_Translation_Exception If initialization fails
+	 * @throws \Aimeos\MW\Translation\Exception If initialization fails
 	 */
 	protected function getTranslations( $domain )
 	{
@@ -149,7 +152,7 @@ class MW_Translation_Zend2
 			if ( !isset( $this->translationSources[$domain] ) )
 			{
 				$msg = sprintf( 'No translation directory for domain "%1$s" available', $domain );
-				throw new MW_Translation_Exception( $msg );
+				throw new \Aimeos\MW\Translation\Exception( $msg );
 			}
 
 			$locale = $this->getLocale();
