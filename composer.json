@@ -12,13 +12,13 @@
 		"wiki": "https://aimeos.org/docs"
 	},
 	"require": {
+		"php": ">=5.3.3",
 		"zendframework/zend-i18n": "2.3.*",
-		"zendframework/zend-servicemanager": "2.3.*",
-		"php": ">=5.3.2"
+		"zendframework/zend-servicemanager": "2.3.*"
 	},
 	"autoload": {
-		"psr-0": {
-			"MW": "lib/custom/src"
+		"psr-4": {
+			"Aimeos\\MW\\": "lib/custom/src/MW"
 		},
 		"classmap": [
 			"lib/custom/src"
