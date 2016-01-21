@@ -13,8 +13,8 @@
 	},
 	"require": {
 		"php": ">=5.3.3",
-		"zendframework/zend-i18n": "2.3.*",
-		"zendframework/zend-servicemanager": "2.3.*",
+		"zendframework/zend-i18n": "~2.3",
+		"zendframework/zend-servicemanager": "~2.3",
 		"composer/installers": "~1.0"
 	},
 	"autoload": {
