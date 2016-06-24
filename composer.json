@@ -2,7 +2,7 @@
 	"name": "aimeos/ai-zend2-i18n",
 	"description": "Zend Framework 2 adapter for Aimeos web shops and e-commerce solutions",
 	"keywords": ["aimeos", "adapter", "zend", "i18n", "translate", "shop", "e-commerce"],
-	"homepage": "https://aimeos.org",
+	"homepage": "https://aimeos.org/",
 	"type": "aimeos-extension",
 	"license": "LGPL-3.0",
 	"support": {
