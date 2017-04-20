@@ -12,7 +12,7 @@ namespace Aimeos\MW\Translation;
 /**
  * Test class for \Aimeos\MW\Translation\Zend2Test.
  */
-class Zend2Test extends \PHPUnit_Framework_TestCase
+class Zend2Test extends \PHPUnit\Framework\TestCase
 {
 	private $object;
 
