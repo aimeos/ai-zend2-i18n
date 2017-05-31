@@ -21,3 +21,8 @@ script: vendor/bin/phing -Ddir=ext/ai-zend2-i18n coverageext checkext
 
 after_success:
   - php vendor/bin/coveralls -c ext/ai-zend2-i18n/.coveralls.yml
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
