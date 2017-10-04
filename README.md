@@ -30,7 +30,7 @@ php -r "readfile('https://getcomposer.org/installer');" | php -- --filename=comp
 Add the ai-zend2-i18n extension to the "require" section of your ```composer.json``` file:
 ```
 "require": [
-    "aimeos/ai-zend2-i18n": "dev-master",
+    "aimeos/ai-zend2-i18n": "~2017.10",
     ...
 ],
 ```
