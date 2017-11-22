@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/aimeos/ai-zend2-i18n.svg)](https://travis-ci.org/aimeos/ai-zend2-i18n)
 [![Coverage Status](https://coveralls.io/repos/aimeos/ai-zend2-i18n/badge.svg?branch=master&service=github)](https://coveralls.io/github/aimeos/ai-zend2-i18n?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aimeos/ai-zend2-i18n/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aimeos/ai-zend2-i18n/?branch=master)
-[![HHVM Status](http://hhvm.h4cc.de/badge/aimeos/ai-zend2-i18n.svg)](http://hhvm.h4cc.de/package/aimeos/ai-zend2-i18n)
+[![License](https://poser.pugx.org/aimeos/ai-zend2-i18n/license.svg)](https://packagist.org/packages/aimeos/ai-zend2-i18n)
 
 The Aimeos web shop components can integrate into almost any PHP application and uses the infrastructure of the application for building URLs, caching content, configuration settings, logging messages, session handling, sending e-mails or handling translations.
 
