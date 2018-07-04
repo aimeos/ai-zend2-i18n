@@ -16,7 +16,7 @@
 		"zendframework/zend-i18n": "~2.3",
 		"zendframework/zend-servicemanager": "~2.3",
 		"composer/installers": "^1.0",
-		"aimeos/aimeos-core": "dev-master"
+		"aimeos/aimeos-core": "~2018.07"
 	},
 	"autoload": {
 		"psr-4": {
